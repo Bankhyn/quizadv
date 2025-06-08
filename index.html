@@ -26,7 +26,7 @@
 <div style="position:relative; width:1355px; height:786px; margin:auto; margin-top:40px;">
   <img src="quizadv.png" style="position:absolute;top:0;left:0;width:1355px;height:786px;z-index:1;">
   <canvas id="quiz1canvas" width="1355" height="786"
-    style="position:absolute;top:0;left:0;width:1355px;height:786px;z-index:2; background:rgba(0,150,255,0.05); border:2px solid red; cursor:crosshair;">
+    style="position:absolute;top:0;left:0;width:1355px;height:786px;z-index:2; background:rgba(255, 255, 255, 0.05); border:2px solid red; cursor:crosshair;">
   </canvas>
 </div>
 <div id="answer-box">
@@ -46,92 +46,87 @@ const steps = [
     type: "down"
   },
   {
-    question: "2. กรุณาวาดฟิโบภูเขาลูกหลัง(แบบตีรวบ)",
-    answer: {x1: 233.2, y1: 207, x2: 368.2, y2: 144},
-    type: "down"
-  },
-  {
-    question: "3. กรุณาวาดฟิโบภูเขาลูกหลัง(แบบหักคอ)",
+    question: "2. กรุณาวาดฟิโบภูเขาลูกหลัง(แบบหักคอ)",
     answer: {x1: 330.4, y1: 194, x2: 361.4, y2: 144},
     type: "down"
   },
   {
-    question: "4. กรุณาตัดภูเขาเมื่อฟิโบถึงสุดทางรัก (คลิกเส้นแนวตั้ง)",
+    question: "3. กรุณาตัดภูเขาเมื่อฟิโบถึงสุดทางรัก (คลิกเส้นแนวตั้ง)",
     type: "vertical",
-    answerX: 429.2
+    answerX: 410
   },
   {
-    question: "5. กรุณา ลบฟิโบชุดต้นรอบที่ถึงสุดทางรักแล้ว ",
+    question: "4. กรุณา ลบฟิโบชุดต้นรอบที่ถึงสุดทางรักแล้ว ",
     type: "remove",
     removeIndex: 0
   },
   {
-    question: "6. กรุณา ลบฟิโบชุดที่ถึงสุดทางรักแล้ว ",
+    question: "5. กรุณา ลบฟิโบชุดที่ถึงสุดทางรักแล้ว ",
     type: "remove",
-    removeIndex: 1
+    removeIndex: 0
   },
   {
-    question: "7. กรุณาวาดฟิโบหักคอหลังจากตัดภูเขา",
+    question: "6. กรุณาวาดฟิโบหักคอหลังจากตัดภูเขา",
     answer: {x1: 431.2, y1: 336.7, x2: 483.2, y2: 222.7},
     type: "down"
   },
   {
-    question: "8. กรุณาตัดภูเขาเมื่อชุดหักคอปิดไม่เกิน161.8 และRSI OVS มีการดีด1รอบ STOCH (คลิกเส้นแนวตั้ง)",
+    question: "7. กรุณาตัดภูเขาเมื่อชุดหักคอปิดไม่เกิน161.8 และRSI OVS มีการดีด1รอบ STOCH (คลิกเส้นแนวตั้ง)",
     type: "vertical",
     answerX: 534
   },
   {
-    question: "9. กรุณา ลบฟิโบที่หักคอไม่ถึง161.8(ไม่CF FIBO) ",
+    question: "8. กรุณา ลบฟิโบที่หักคอไม่ถึง161.8(ไม่CF FIBO) ",
     type: "remove",
-    removeIndex: 2
+    removeIndex: 1
   },
   {
-    question: "10. กรุณาวาดฟิโบหักคอหลังจากตัดภูเขา",
+    question: "9. กรุณาวาดฟิโบหักคอหลังจากตัดภูเขา",
     answer: {x1: 535.5, y1: 362, x2: 577.5, y2: 220},
     type: "down"
   },
   {
-    question: "11. กรุณาตัดภูเขาเมื่อชุดหักคอปิดไม่เกิน161.8 และRSI OVS มีการดีด1รอบ STOCH (คลิกเส้นแนวตั้ง)",
+    question: "10. กรุณาตัดภูเขาเมื่อชุดหักคอปิดไม่เกิน161.8 และRSI OVS มีการดีด1รอบ STOCH (คลิกเส้นแนวตั้ง)",
     type: "vertical",
     answerX: 607
   },
   {
-    question: "12. กรุณา ลบฟิโบที่หักคอปิดไม่เกิน161.8 หลังจากตัดภูเขา",
+    question: "11. กรุณา ลบฟิโบที่หักคอปิดไม่เกิน161.8 หลังจากตัดภูเขา",
     type: "remove",
-    removeIndex: 3
+    removeIndex: 2
   },
   {
-    question: "13. กรุณา ลบฟิโบชุดตีรวบที่ถึงสุดทางรักแล้ว",
-    type: "remove",
-    removeIndex: 0
-  },
-  {
-    question: "14. กรุณาวาดฟิโบชุดหักคอ(หลังจากตัดภูเขา)",
+    question: "12. กรุณาวาดฟิโบชุดหักคอ(หลังจากตัดภูเขา)",
     answer: {x1: 609.5, y1: 437, x2: 703.5, y2: 359},
     type: "down"
   },
   {
-    question: "15. กรุณาวาดชุดสมบูรณ์จากชุดก่อนหน้าที่ลงหักคอไม่ถึง 161.8 RSI ไม่จบรอบ ไม่ตัดภุเขาต้องย้ายมาวัดชุดสมบูรณ์",
+    question: "13. กรุณาวาดชุดสมบูรณ์จากชุดก่อนหน้าที่ลงหักคอไม่ถึง 161.8 RSI ไม่จบรอบ ไม่ตัดภูเขาต้องย้ายมาวัดชุดสมบูรณ์",
     answer: {x1: 750.5, y1: 451, x2: 790.5, y2: 398},
     type: "down"
   },
   {
-    question: "16. กรุณาลบฟิโบหักคอก่อนหน้าที่ปิดไม่เกิน 161.8 ",
+    question: "14. กรุณาลบฟิโบหักคอก่อนหน้าที่ปิดไม่เกิน 161.8 ",
     type: "remove",
     removeIndex: 3
   },
   {
-    question: "17. กรุณาวาดฟิโบหักคอขึ้น",
+    question: "15. กรุณาวาดฟิโบหักคอขึ้น",
     answer: {x1: 771.5, y1: 397, x2: 908.5, y2: 510},
     type: "up"
   },
   {
-    question: "18. กรุณา ลบฟิโบขาลงที่ถูกทำลาย ",
+    question: "17. กรุณา ลบฟิโบขาลงที่ถูกทำลาย ",
     type: "remove",
     removeIndex: 3
   },
   {
-    question: "19. กรุณาตัดภูเขาเมื่อมีการทำลายฟิโบขาลงและRSIจบรอบ(คลิกเส้นแนวตั้ง)",
+    question: "18. กรุณาตัดภูเขาเมื่อมีการทำลายฟิโบขาลงและRSIจบรอบ(คลิกเส้นแนวตั้ง)",
+    type: "vertical",
+    answerX: 888.5
+  },
+    {
+    question: "19. กรุณาตัดภูเขาเมื่อมีการหักคอขึ้นปิดไม่เกิน161.8และRSIจบรอบและมีSTOCHลงOVS(คลิกเส้นแนวตั้ง)",
     type: "vertical",
     answerX: 919.5
   },
@@ -153,7 +148,7 @@ const steps = [
   {
     question: "23. กรุณา ลบฟิโบขาขึ้นหักคอที่ปิดไม่เกิน161.8 ",
     type: "remove",
-    removeIndex: 4
+    removeIndex: 5
   },
   {
     question: "24. กรุณาวาดฟิโบขาขึ้นหลังจากตัดภูเขาให้ถูกต้อง ",
@@ -168,7 +163,7 @@ const steps = [
   {
     question: "26. กรุณา ลบฟิโบขาขึ้นหักคอที่ปิดไม่เกิน161.8 ",
     type: "remove",
-    removeIndex: 5
+    removeIndex: 6
   },
   {
     question: "27. กรุณาวาดฟิโบขาขึ้นหักคอหัวสุดท้าย ",
@@ -229,7 +224,7 @@ function drawFiboLine(line, idx) {
       ctx.lineWidth = 1;
       ctx.setLineDash([7, 5]); ctx.stroke();
       ctx.setLineDash([]);
-      ctx.font = "15px Arial"; ctx.fillStyle = color;
+      ctx.font = "15px Arial"; ctx.fillStyle = "#CC00FF";
       ctx.fillText((level * 100).toFixed(1) + "%", x2 + 12, y - 6);
     });
   } else {
@@ -241,7 +236,7 @@ function drawFiboLine(line, idx) {
       ctx.lineWidth = 1;
       ctx.setLineDash([7, 5]); ctx.stroke();
       ctx.setLineDash([]);
-      ctx.font = "15px Arial"; ctx.fillStyle = color;
+      ctx.font = "15px Arial"; ctx.fillStyle = "#CC00FF";
       ctx.fillText((level * 100).toFixed(1) + "%", x2 + 12, y - 6);
     });
   }
@@ -249,7 +244,7 @@ function drawFiboLine(line, idx) {
   ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
   ctx.strokeStyle = color;
   ctx.lineWidth = 1.8; ctx.setLineDash([]); ctx.stroke();
-  ctx.font = "bold 30px Arial"; ctx.fillStyle = "#444";
+  ctx.font = "bold 30px Arial"; ctx.fillStyle = "	#000000";
   ctx.fillText(idx + 1, (x1 + x2) / 2, (y1 + y2) / 2);
 }
 
